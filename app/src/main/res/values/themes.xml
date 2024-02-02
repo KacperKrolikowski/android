@@ -1,0 +1,11 @@
+<resources>
+    <style name="Theme.Parkology" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/purple_80</item>
+        <item name="colorPrimaryVariant">@color/purple_80</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/purple_grey_80</item>
+        <item name="colorSecondaryVariant">@color/purple_grey_80</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+    </style>
+</resources>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/parksFragment">
+    <fragment
+        android:id="@+id/parksFragment"
+        android:name="pl.autopay.parkology.ui.parks.ParksFragment"
+        android:label="@string/title_parks">
+        <action
+            android:id="@+id/openParkDetailsFragment"
+            app:destination="@id/parkDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/favouritesFragment"
+        android:name="pl.autopay.parkology.ui.favourites.FavouritesFragment"
+        android:label="@string/title_favourites">
+        <action
+            android:id="@+id/openParkDetailsFragment"
+            app:destination="@id/parkDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/parkDetailsFragment"
+        android:name="pl.autopay.parkology.ui.details.ParkDetailsFragment"
+        android:label="ParkDetailsFragment">
+        <argument
+            android:name="park"
+            app:argType="pl.autopay.parkology.data.network.dto.park.Park" />
+    </fragment>
+</navigation>

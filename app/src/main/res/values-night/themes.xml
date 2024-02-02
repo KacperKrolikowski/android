@@ -1,0 +1,10 @@
+<resources>
+    <style name="Theme.Parkology" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/purple_40</item>
+        <item name="colorPrimaryVariant">@color/purple_40</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <item name="colorSecondary">@color/purple_grey_40</item>
+        <item name="colorSecondaryVariant">@color/purple_grey_40</item>
+        <item name="colorOnSecondary">@color/black</item>
+    </style>
+</resources>
