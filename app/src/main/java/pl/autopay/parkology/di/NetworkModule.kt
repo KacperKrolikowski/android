@@ -8,6 +8,7 @@ import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import pl.autopay.parkology.data.network.service.NetworkService
+import pl.autopay.parkology.util.ApiKeyInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.time.Duration
@@ -38,6 +39,7 @@ object NetworkModule {
         .connectTimeout(RequestTimeout)
         .pingInterval(RequestTimeout)
         .addInterceptor(HttpLoggingInterceptor())
+        .addInterceptor(ApiKeyInterceptor())
         .build()
 
     @Provides
