@@ -140,23 +140,23 @@ data class Park(
             @SerializedName("endDate")
             val endDate: String,
             @SerializedName("exceptionHours")
-            val exceptionHours: ExceptionHours
+            val exceptionHours: ExceptionHours?
         ) : Serializable {
             data class ExceptionHours(
                 @SerializedName("sunday")
-                val sunday: String,
+                val sunday: String?,
                 @SerializedName("monday")
-                val monday: String,
+                val monday: String?,
                 @SerializedName("tuesday")
-                val tuesday: String,
+                val tuesday: String?,
                 @SerializedName("wednesday")
-                val wednesday: String,
+                val wednesday: String?,
                 @SerializedName("thursday")
-                val thursday: String,
+                val thursday: String?,
                 @SerializedName("friday")
-                val friday: String,
+                val friday: String?,
                 @SerializedName("saturday")
-                val saturday: String
+                val saturday: String?
             ) : Serializable
         }
     }
