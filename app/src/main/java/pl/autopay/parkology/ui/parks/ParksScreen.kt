@@ -28,13 +28,13 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import coil.compose.AsyncImage
 import pl.autopay.parkology.R
-import pl.autopay.parkology.data.network.dto.park.Park
+import pl.autopay.parkology.ui.details.ParkDetailsEntity
 import pl.autopay.parkology.ui.parks.intents.ParksEvent
 import pl.autopay.parkology.ui.parks.intents.ParksViewState
 
 @Composable
 fun ParksScreen(
-    openDetails: (Park) -> Unit,
+    openDetails: (ParkDetailsEntity) -> Unit,
     viewModel: ParksViewModel = hiltViewModel()
 ) {
     val state by viewModel.viewState.collectAsState()
@@ -51,7 +51,7 @@ fun ParksScreen(
 internal fun ParksContent(
     state: ParksViewState,
     onEvent: (ParksEvent) -> Unit,
-    openDetails: (Park) -> Unit
+    openDetails: (ParkDetailsEntity) -> Unit
 ) {
     Scaffold(
         topBar = {
@@ -76,7 +76,7 @@ internal fun ParksContent(
                 Card(onClick = { openDetails(park) }) {
                     Box(contentAlignment = Alignment.BottomCenter) {
                         AsyncImage(
-                            model = park.images.first().url,
+                            model = park.imageUrl,
                             contentDescription = null,
                             contentScale = ContentScale.Crop,
                             modifier = Modifier

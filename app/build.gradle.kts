@@ -72,6 +72,9 @@ dependencies {
     implementation(libs.network.okhttp3)
     implementation(libs.network.okhttp3.interceptor)
     implementation(libs.network.gson)
+    implementation(libs.room.ktx)
+    implementation(libs.room.runtime)
+    kapt(libs.room.compiler)
 
     implementation(platform(libs.compose.bom))
     implementation(libs.ui)

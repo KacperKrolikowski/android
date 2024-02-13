@@ -36,9 +36,9 @@ class ParkDetailsFragment : Fragment() {
     }
 
     private fun setupUI() {
-        binding.imgPark.loadImage(args.park.images.first().url)
-        binding.txtName.text = args.park.fullName
-        binding.txtDesc.text = args.park.description
+        binding.imgPark.loadImage(args.parkEntity.imageUrl)
+        binding.txtName.text = args.parkEntity.fullName
+        binding.txtDesc.text = args.parkEntity.description
         binding.btnBack.setOnClickListener { findNavController().navigateUp() }
     }
 

@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import dagger.hilt.android.AndroidEntryPoint
 import pl.autopay.parkology.core.theme.ParkologyTheme
-import pl.autopay.parkology.data.network.dto.park.Park
+import pl.autopay.parkology.ui.details.ParkDetailsEntity
 
 @AndroidEntryPoint
 class ParksFragment : Fragment() {
@@ -32,7 +32,7 @@ class ParksFragment : Fragment() {
         }
     }
 
-    private fun openDetails(park: Park) {
+    private fun openDetails(park: ParkDetailsEntity) {
         findNavController().navigate(ParksFragmentDirections.openParkDetailsFragment(park))
     }
 }

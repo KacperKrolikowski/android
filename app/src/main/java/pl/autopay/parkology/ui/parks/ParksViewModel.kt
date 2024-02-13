@@ -9,6 +9,7 @@ import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.update
 import pl.autopay.parkology.data.repository.ParkRepository
+import pl.autopay.parkology.ui.details.mapToParkDetailsEntity
 import pl.autopay.parkology.ui.parks.intents.ParksEvent
 import pl.autopay.parkology.ui.parks.intents.ParksViewState
 import javax.inject.Inject
@@ -45,7 +46,13 @@ class ParksViewModel @Inject constructor(
 
     private fun getParks() {
         repo.getParks(page)
-            .onEach { response -> _viewState.update { it.copy(parks = it.parks.plus(response.data)) } }
+            .onEach { response ->
+                _viewState.update {
+                    it.copy(parks = it.parks.plus(response.data.map { park ->
+                        park.mapToParkDetailsEntity()
+                    }))
+                }
+            }
             .launchIn(viewModelScope)
     }
 }

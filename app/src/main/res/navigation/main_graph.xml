@@ -25,7 +25,7 @@
         android:name="pl.autopay.parkology.ui.details.ParkDetailsFragment"
         android:label="ParkDetailsFragment">
         <argument
-            android:name="park"
-            app:argType="pl.autopay.parkology.data.network.dto.park.Park" />
+            android:name="parkEntity"
+            app:argType="pl.autopay.parkology.ui.details.ParkDetailsEntity" />
     </fragment>
 </navigation>
